@@ -1,0 +1,18 @@
+# environments
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# data (splits CSVs in data/splits/ ARE committed)
+data/raw/
+data/processed/
+data/downloads/
+
+# outputs
+results/checkpoints/
+*.pt
+*.pth
+
+# OS
+.DS_Store

@@ -1,0 +1,22 @@
+# Detector 3: Frequency feature classifier (FFT/DCT statistics + shallow model).
+
+experiment_name: frequency
+
+input:
+  type: frequency
+  features:
+    - radial_power_spectrum   # azimuthally averaged FFT power, binned
+    - high_freq_energy_ratio  # energy above a radius threshold / total energy
+    - dct_stats               # blockwise DCT coefficient statistics
+  radial_bins: 64
+  high_freq_radius_fraction: 0.5
+
+classifier:
+  # one of: logistic_regression, random_forest
+  type: logistic_regression
+  logistic_regression:
+    C: 1.0
+    max_iter: 2000
+  random_forest:
+    n_estimators: 300
+    max_depth: null

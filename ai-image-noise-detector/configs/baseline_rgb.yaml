@@ -1,0 +1,20 @@
+# Detector 1: RGB CNN baseline (ResNet18 on raw RGB images).
+
+experiment_name: baseline_rgb
+
+model:
+  arch: resnet18
+  pretrained: true
+  in_channels: 3
+
+input:
+  type: rgb
+
+training:
+  epochs: 15
+  optimizer: adamw
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  loss: bce
+  # checkpoint selection metric on the validation split
+  select_by: auroc

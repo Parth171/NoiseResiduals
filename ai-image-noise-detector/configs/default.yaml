@@ -1,0 +1,21 @@
+# Shared defaults. Experiment configs (baseline_rgb.yaml, residual_cnn.yaml,
+# frequency.yaml) are merged on top of this file, overriding any key.
+
+seed: 42
+
+paths:
+  data_root: data/raw
+  splits_csv: data/splits/synthbuster_random.csv
+  metrics_dir: results/metrics
+  checkpoints_dir: results/checkpoints
+  figures_dir: reports/figures
+
+data:
+  dataset_name: Synthbuster
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+  # crop strategy for training images: "random" or "center"
+  train_crop: random
+
+device: auto  # "auto" picks cuda > mps > cpu
